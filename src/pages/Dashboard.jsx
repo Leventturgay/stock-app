@@ -14,9 +14,11 @@ import { blueGrey } from "@mui/material/colors";
 import useAuthCalls from "../hooks/useAuthCalls";
 import { useSelector } from "react-redux";
 import { Button } from "@mui/material";
-const drawerWidth = 240;
+
+const drawerWidth = 200;
+
 function Dashboard(props) {
-  const { currentUser, error } = useSelector((state) => state.auth);
+  const { currentUser } = useSelector((state) => state.auth);
   const { logout } = useAuthCalls();
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
@@ -53,7 +55,7 @@ function Dashboard(props) {
           >
             <MenuIcon />
           </IconButton>
-          <Typography variant="h6" noWrap component="div">
+          <Typography variant="h6" noWrap component="div" sx={{ flexGrow: 1 }}>
             Stock App
           </Typography>
           {currentUser && (
