@@ -6,7 +6,7 @@ import useStockCalls from "../hooks/useStockCalls";
 // import { fetchFail, fetchStart, getSuccess } from "../features/stockSlice";
 
 const Firms = () => {
-  const { getFirms } = useStockCalls();
+  const { getFirms, getSales } = useStockCalls();
 
   // const dispatch = useDispatch();
   // const { token } = useSelector((state) => state.auth);
@@ -27,6 +27,7 @@ const Firms = () => {
 
   useEffect(() => {
     getFirms();
+    getSales();
   }, []);
 
   return <div>Firms</div>;
